@@ -13,7 +13,7 @@ class Chef {
   }
 
   checkForFood(menuItem) {
-    var breakfastMenu = this.restaurant.menus[menuItem.type]
+    var foodMenu = this.restaurant.menus[menuItem.type]
 
     for(var i = 0; i < breakfastMenu.length; i++){
       if (breakfastMenu[i] === menuItem){
