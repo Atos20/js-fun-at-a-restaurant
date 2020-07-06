@@ -24,7 +24,6 @@ function addIngredients(ingredient, ingredientsList) {
   }
 }
 
-
 function formatPrice(initialPrice) {
   return `$${initialPrice}`
 }

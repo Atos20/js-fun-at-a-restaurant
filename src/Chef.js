@@ -5,7 +5,7 @@ class Chef {
   }
 
   greetCustomer(costumer, isMorning) {
-    if (isMorning === undefined || isMorning === false){
+    if (!isMorning){
       return `Hello, ${costumer}!`
     } else {
       return `Good morning, ${costumer}!`
@@ -14,16 +14,18 @@ class Chef {
 
   checkForFood(menuItem) {
     var foodMenu = this.restaurant.menus[menuItem.type]
-
-    for(var i = 0; i < breakfastMenu.length; i++){
-      if (breakfastMenu[i] === menuItem){
-        return `Yes, we're serving ${menuItem.name} today!`
+    if (foodMenu.length > 0){
+      for(var i = 0; i < foodMenu.length; i++){
+        if (foodMenu[i] === menuItem){
+          return `Yes, we're serving ${menuItem.name} today!`
+        }
       }
-       else if (breakfastMenu[i] === undefined || breakfastMenu.length === 0){
-        return `Sorry, we aren't serving Quiche today.`
-      }
+    }
+     else {
+      return `Sorry, we aren\'t serving ${menuItem.name} today.`
     }
   }
 }
+
 
 module.exports = Chef;
